@@ -1,0 +1,38 @@
+# Configuration for the HTTP(S) endpoints.
+web:
+  protocol: https
+  host: foo.org
+  port: 6664
+  allowedOrigins:
+    - 'https://foo.org:5000'
+    - 'https://foo.org:6664'
+    - 'http://localhost:33143'
+  tlsCert: certs/foo.org/cert.pem
+  tlsKey: certs/foo.org/key.pem
+
+#database:
+#  type: sqlite3
+#  config:
+#    file: ./db/email.db
+
+database:
+  type: postgres
+  config:
+    database: reactive_mailbox
+    user: admin
+    password: admin
+    host: localhost
+    port: 5432
+
+#database:
+#  type: mysql
+#  config:
+#    database: email
+#    user: root
+#    password: password
+#    host: localhost
+#    port: 3306
+
+file:
+  uploadApi: /api/file/upload
+  folder: filerepo
